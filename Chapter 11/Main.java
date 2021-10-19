@@ -1,57 +1,57 @@
-package com.company;
-
-import java.util.Scanner;
+package E11_03;
 
 /**
- * <h1>Exercise 11-1</h1>
+ *<h1>Main</h1>
  *
- * <p>This class will test Triangle.java and GeometricObject.java</p>
- *
- * <p>Created: 10/14/2021</p>
- *
- * @author Rhett Boatright
+ *<p> This class will test CheckingAccount, SavingsAccount, and Account classes.</p>
+ * 
+ *<p>Created: 10/19/2021</p>
+ * 
+ *@author Rhett Boatright
  */
 public class Main {
-
-    //make public main class.
-
-    /**
-     * This method will create a new triangle object to test Triangle.java.
-     *
-     * @param args (String; placeholder for the main method.)
-     */
     public static void main(String[] args) {
-
-        Scanner user = new Scanner(System.in);//Import Scanner util.
-
-        //Create new triangle object.
-        Triangle triangle1 = new Triangle();
-
-        //Prompt user to input sides of triangle.
-        System.out.println("Enter the sides of the triangle separated by a space: ");
-        triangle1.setSide1(user.nextDouble());
-        triangle1.setSide2(user.nextDouble());
-        triangle1.setSide3(user.nextDouble());
-
-        //Prompt user to input the color of the triangle.
-        System.out.println("Enter the color of the triangle: ");
-        triangle1.setColor(user.next());
-
-        //Prompt user to input filling of the triangle.
-        System.out.println("Enter 'Yes' if the triangle is filled" +
-                " or 'No' if it is not filled: ");
-        String answer = user.next();
-        if(answer.equalsIgnoreCase("yes")){
-            triangle1.setFilled(true);
-        }
-        else if(answer.equalsIgnoreCase("no")){
-            triangle1.setFilled(false);
-        }
-
-        //Return new triangle to user.
-        System.out.println(triangle1.toString());
+    	savings();
+    	account();
+    	checking();
+    	
     }
+    
+    /**
+     *This method will test SavingsAccount.
+     */
+    public static void savings() {
 
+    	 SavingsAccount savingsAccount1 = new SavingsAccount(100, 4.5,
+                 2246, 25, 126);
+         System.out.println("\n" + savingsAccount1.toString());
 
+         SavingsAccount savingsAccount2 = new SavingsAccount(100, 4.5,
+                 2247, 25, 50);
+         System.out.println("\n" + savingsAccount2.toString());
+    }
+    
+    /**
+     *This method will test Account.
+     */
+    public static void account() {
 
+         Account account1 = new Account(2248, 100,
+                 4.5);
+         System.out.println("\n" + account1.toString());
+    }
+    
+    /**
+     *This method will test CheckingAccount.
+     */
+    public static void checking() {
+    	CheckingAccount checkingAccount1 = new CheckingAccount(100, 4.5,
+                2244, 25, 300);
+        System.out.println("\n" + checkingAccount1.toString());
+
+        CheckingAccount checkingAccount2 = new CheckingAccount(100, 4.5,
+                2245, 25, 50);
+        System.out.println("\n" + checkingAccount2.toString());
+
+    }
 }
